@@ -69,6 +69,7 @@ func (c *Config) Sources() map[string]*SourceConfig {
 			Template:        c.GetString(fmt.Sprintf("sources.%s.template", k)),
 			ActionType:      ActionType(c.GetString(fmt.Sprintf("sources.%s.action_type", k))),
 			FindPersonaExpr: c.GetString(fmt.Sprintf("sources.%s.find_persona_expr", k)),
+			SendAsEmbed:     c.GetBool(fmt.Sprintf("sources.%s.send_as_embed", k)),
 		}
 		if srcCfg.RequestType == "" {
 			srcCfg.RequestType = RequestTypePostJsonObj
@@ -101,4 +102,5 @@ type SourceConfig struct {
 	ActionType      ActionType  `json:"action_type" yaml:"action_type"`
 	Template        string      `json:"template" yaml:"template"`
 	FindPersonaExpr string      `json:"find_persona_expr" yaml:"find_persona_expr"`
+	SendAsEmbed     bool        `json:"send_as_embed" yaml:"send_as_embed"`
 }

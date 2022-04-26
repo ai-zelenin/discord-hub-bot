@@ -1,0 +1,737 @@
+POST http://localhost:8900/jira
+Content-Type: application/json
+
+{
+  "timestamp": 1650879064239,
+  "webhookEvent": "jira:issue_updated",
+  "issue_event_type_name": "issue_generic",
+  "user": {
+    "self": "https://setpartnerstv.atlassian.net/rest/api/2/user?accountId=624ab6c7f6a26900695f5878",
+    "accountId": "624ab6c7f6a26900695f5878",
+    "avatarUrls": {
+      "48x48": "https://secure.gravatar.com/avatar/4cb56ac456b857cce794f0fe5f712996?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Fdefault-avatar-2.png",
+      "24x24": "https://secure.gravatar.com/avatar/4cb56ac456b857cce794f0fe5f712996?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Fdefault-avatar-2.png",
+      "16x16": "https://secure.gravatar.com/avatar/4cb56ac456b857cce794f0fe5f712996?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Fdefault-avatar-2.png",
+      "32x32": "https://secure.gravatar.com/avatar/4cb56ac456b857cce794f0fe5f712996?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Fdefault-avatar-2.png"
+    },
+    "displayName": "(DI) Кахаров Зафар",
+    "active": true,
+    "timeZone": "Europe/Moscow",
+    "accountType": "atlassian"
+  },
+  "issue": {
+    "id": "13460",
+    "self": "https://setpartnerstv.atlassian.net/rest/api/2/13460",
+    "key": "IT-1279",
+    "fields": {
+      "statuscategorychangedate": "2022-04-25T12:31:04.222+0300",
+      "customfield_10070": [],
+      "customfield_10071": null,
+      "customfield_10072": null,
+      "customfield_10073": null,
+      "customfield_10074": null,
+      "customfield_10075": null,
+      "customfield_10076": null,
+      "fixVersions": [
+        {
+          "self": "https://setpartnerstv.atlassian.net/rest/api/2/version/10018",
+          "id": "10018",
+          "description": "",
+          "name": "Sprint 31",
+          "archived": false,
+          "released": false
+        }
+      ],
+      "customfield_10110": 0.0,
+      "customfield_10111": 0.0,
+      "customfield_10079": null,
+      "resolution": null,
+      "customfield_10104": null,
+      "customfield_10105": null,
+      "customfield_10106": 0.0,
+      "customfield_10107": 0.0,
+      "customfield_10108": 0.0,
+      "customfield_10109": 0.0,
+      "lastViewed": "2022-04-25T12:30:26.951+0300",
+      "customfield_10060": {
+        "self": "https://setpartnerstv.atlassian.net/rest/api/2/customFieldOption/10100",
+        "value": "Critical",
+        "id": "10100"
+      },
+      "customfield_10061": null,
+      "customfield_10062": null,
+      "customfield_10063": null,
+      "customfield_10064": null,
+      "customfield_10065": null,
+      "customfield_10066": null,
+      "priority": {
+        "self": "https://setpartnerstv.atlassian.net/rest/api/2/priority/3",
+        "iconUrl": "https://setpartnerstv.atlassian.net/images/icons/priorities/medium.svg",
+        "name": "Medium",
+        "id": "3"
+      },
+      "customfield_10100": null,
+      "customfield_10067": null,
+      "customfield_10068": null,
+      "customfield_10101": null,
+      "customfield_10102": {
+        "self": "https://setpartnerstv.atlassian.net/rest/api/2/customFieldOption/10158",
+        "value": "Medium",
+        "id": "10158"
+      },
+      "customfield_10069": null,
+      "labels": [],
+      "timeestimate": null,
+      "aggregatetimeoriginalestimate": null,
+      "versions": [],
+      "issuelinks": [],
+      "assignee": {
+        "self": "https://setpartnerstv.atlassian.net/rest/api/2/user?accountId=624ab6c7f6a26900695f5878",
+        "accountId": "624ab6c7f6a26900695f5878",
+        "avatarUrls": {
+          "48x48": "https://secure.gravatar.com/avatar/4cb56ac456b857cce794f0fe5f712996?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Fdefault-avatar-2.png",
+          "24x24": "https://secure.gravatar.com/avatar/4cb56ac456b857cce794f0fe5f712996?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Fdefault-avatar-2.png",
+          "16x16": "https://secure.gravatar.com/avatar/4cb56ac456b857cce794f0fe5f712996?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Fdefault-avatar-2.png",
+          "32x32": "https://secure.gravatar.com/avatar/4cb56ac456b857cce794f0fe5f712996?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Fdefault-avatar-2.png"
+        },
+        "displayName": "(DI) Зеленин Артем",
+        "active": true,
+        "timeZone": "Europe/Moscow",
+        "accountType": "atlassian"
+      },
+      "status": {
+        "self": "https://setpartnerstv.atlassian.net/rest/api/2/status/3",
+        "description": "This issue is being actively worked on at the moment by the assignee.",
+        "iconUrl": "https://setpartnerstv.atlassian.net/images/icons/statuses/inprogress.png",
+        "name": "In Progress",
+        "id": "3",
+        "statusCategory": {
+          "self": "https://setpartnerstv.atlassian.net/rest/api/2/statuscategory/4",
+          "id": 4,
+          "key": "indeterminate",
+          "colorName": "yellow",
+          "name": "In Progress"
+        }
+      },
+      "components": [
+        {
+          "self": "https://setpartnerstv.atlassian.net/rest/api/2/component/10033",
+          "id": "10033",
+          "name": "Backend"
+        }
+      ],
+      "customfield_10050": null,
+      "customfield_10052": null,
+      "customfield_10053": null,
+      "customfield_10054": null,
+      "customfield_10055": null,
+      "customfield_10056": null,
+      "customfield_10057": null,
+      "customfield_10058": null,
+      "customfield_10059": null,
+      "customfield_10049": null,
+      "aggregatetimeestimate": null,
+      "creator": {
+        "self": "https://setpartnerstv.atlassian.net/rest/api/2/user?accountId=61e703945fcc3700686b6455",
+        "accountId": "61e703945fcc3700686b6455",
+        "avatarUrls": {
+          "48x48": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/default-avatar-1.png",
+          "24x24": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/default-avatar-1.png",
+          "16x16": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/default-avatar-1.png",
+          "32x32": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/default-avatar-1.png"
+        },
+        "displayName": "(DI) Земсков Сергей",
+        "active": true,
+        "timeZone": "Europe/Moscow",
+        "accountType": "atlassian"
+      },
+      "subtasks": [],
+      "customfield_10040": null,
+      "customfield_10041": null,
+      "customfield_10042": null,
+      "customfield_10043": null,
+      "reporter": {
+        "self": "https://setpartnerstv.atlassian.net/rest/api/2/user?accountId=61e703945fcc3700686b6455",
+        "accountId": "61e703945fcc3700686b6455",
+        "avatarUrls": {
+          "48x48": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/default-avatar-1.png",
+          "24x24": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/default-avatar-1.png",
+          "16x16": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/default-avatar-1.png",
+          "32x32": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/default-avatar-1.png"
+        },
+        "displayName": "(DI) Земсков Сергей",
+        "active": true,
+        "timeZone": "Europe/Moscow",
+        "accountType": "atlassian"
+      },
+      "aggregateprogress": {
+        "progress": 0,
+        "total": 0
+      },
+      "customfield_10046": [],
+      "customfield_10047": null,
+      "customfield_10048": null,
+      "customfield_10038": null,
+      "customfield_10039": null,
+      "progress": {
+        "progress": 0,
+        "total": 0
+      },
+      "votes": {
+        "self": "https://setpartnerstv.atlassian.net/rest/api/2/issue/IT-1279/votes",
+        "votes": 0,
+        "hasVoted": false
+      },
+      "issuetype": {
+        "self": "https://setpartnerstv.atlassian.net/rest/api/2/issuetype/10073",
+        "id": "10073",
+        "description": "A problem or error.",
+        "iconUrl": "https://setpartnerstv.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10303?size=medium",
+        "name": "Bug",
+        "subtask": false,
+        "avatarId": 10303,
+        "hierarchyLevel": 0
+      },
+      "timespent": null,
+      "project": {
+        "self": "https://setpartnerstv.atlassian.net/rest/api/2/project/10021",
+        "id": "10021",
+        "key": "IT",
+        "name": "Ogon.DEV",
+        "projectTypeKey": "software",
+        "simplified": false,
+        "avatarUrls": {
+          "48x48": "https://setpartnerstv.atlassian.net/rest/api/2/universal_avatar/view/type/project/avatar/10418",
+          "24x24": "https://setpartnerstv.atlassian.net/rest/api/2/universal_avatar/view/type/project/avatar/10418?size=small",
+          "16x16": "https://setpartnerstv.atlassian.net/rest/api/2/universal_avatar/view/type/project/avatar/10418?size=xsmall",
+          "32x32": "https://setpartnerstv.atlassian.net/rest/api/2/universal_avatar/view/type/project/avatar/10418?size=medium"
+        }
+      },
+      "aggregatetimespent": null,
+      "customfield_10028": 1.0,
+      "resolutiondate": null,
+      "workratio": -1,
+      "watches": {
+        "self": "https://setpartnerstv.atlassian.net/rest/api/2/issue/IT-1279/watchers",
+        "watchCount": 1,
+        "isWatching": false
+      },
+      "issuerestriction": {
+        "issuerestrictions": {},
+        "shouldDisplay": false
+      },
+      "created": "2022-04-25T12:27:27.547+0300",
+      "customfield_10020": null,
+      "customfield_10021": null,
+      "customfield_10022": null,
+      "customfield_10023": null,
+      "customfield_10024": null,
+      "customfield_10025": null,
+      "customfield_10016": null,
+      "customfield_10017": null,
+      "customfield_10018": {
+        "hasEpicLinkFieldDependency": false,
+        "showField": false,
+        "nonEditableReason": {
+          "reason": "EPIC_LINK_SHOULD_BE_USED",
+          "message": "Чтобы назначить эпик в качестве родителя, используйте ссылку на него."
+        }
+      },
+      "customfield_10019": "0|i00gvk:",
+      "updated": "2022-04-25T12:31:04.222+0300",
+      "customfield_10090": "Не известен",
+      "customfield_10091": "Паник в логах быть не должно",
+      "customfield_10092": "Возникают паники при работе сервиса",
+      "customfield_10093": null,
+      "customfield_10094": null,
+      "timeoriginalestimate": null,
+      "customfield_10096": null,
+      "description": "https://graylog.setpartnerstv.ru/search?q=panic+AND+labels_k8s-app%3Acontent-server&rangetype=relative&streams=6012f8c69620a776d227eb16&relative=86400\r\n\r\n1. Найти запрос который вызывает проблему\r\n2. Поправить",
+      "customfield_10097": null,
+      "customfield_10098": null,
+      "customfield_10010": null,
+      "customfield_10099": "https://graylog.setpartnerstv.ru — получить доступ к логам prod у Дмитрия Петрова",
+      "customfield_10014": null,
+      "customfield_10015": null,
+      "customfield_10005": null,
+      "customfield_10006": null,
+      "customfield_10007": null,
+      "security": null,
+      "customfield_10008": null,
+      "customfield_10009": null,
+      "attachment": [],
+      "summary": "[BACK] Разобраться с panic в content-server",
+      "customfield_10080": null,
+      "customfield_10086": null,
+      "customfield_10120": null,
+      "customfield_10087": [
+        {
+          "self": "https://setpartnerstv.atlassian.net/rest/api/2/customFieldOption/10129",
+          "value": "Dev",
+          "id": "10129"
+        },
+        {
+          "self": "https://setpartnerstv.atlassian.net/rest/api/2/customFieldOption/10130",
+          "value": "Stage",
+          "id": "10130"
+        },
+        {
+          "self": "https://setpartnerstv.atlassian.net/rest/api/2/customFieldOption/10131",
+          "value": "QA",
+          "id": "10131"
+        },
+        {
+          "self": "https://setpartnerstv.atlassian.net/rest/api/2/customFieldOption/10132",
+          "value": "Production",
+          "id": "10132"
+        }
+      ],
+      "customfield_10121": null,
+      "customfield_10000": "{}",
+      "customfield_10001": null,
+      "customfield_10122": null,
+      "customfield_10002": null,
+      "customfield_10003": null,
+      "customfield_10004": null,
+      "environment": null,
+      "customfield_10119": null,
+      "duedate": null
+    }
+  },
+  "changelog": {
+    "id": "43210",
+    "items": [
+      {
+        "field": "status",
+        "fieldtype": "jira",
+        "fieldId": "status",
+        "from": "1",
+        "fromString": "Buffer",
+        "to": "3",
+        "toString": "In Progress"
+      }
+    ]
+  }
+}
+
+###
+POST http://localhost:8900/gitlab
+Content-Type: application/json
+
+{
+  "object_kind": "push",
+  "event_name": "push",
+  "before": "6dff0045dbfeb2d509bf959a1acb2ffe56fd02e4",
+  "after": "d994dbb39626e7e4b3af8ae3c1a89926e6cc343a",
+  "ref": "refs/heads/feature/IT-1289",
+  "checkout_sha": "d994dbb39626e7e4b3af8ae3c1a89926e6cc343a",
+  "message": null,
+  "user_id": 61,
+  "user_name": "Андрей Мельник",
+  "user_username": "a.melnik",
+  "user_email": "",
+  "user_avatar": "https://secure.gravatar.com/avatar/0db61cea7d8b758edb7f5710d7e5620c?s=80\u0026d=identicon",
+  "project_id": 2,
+  "project": {
+    "id": 2,
+    "name": "ecosystem",
+    "description": "",
+    "web_url": "https://git.setpartnerstv.ru/backend/ecosystem",
+    "avatar_url": null,
+    "git_ssh_url": "git@git.setpartnerstv.ru:backend/ecosystem.git",
+    "git_http_url": "https://git.setpartnerstv.ru/backend/ecosystem.git",
+    "namespace": "backend",
+    "visibility_level": 0,
+    "path_with_namespace": "backend/ecosystem",
+    "default_branch": "develop",
+    "ci_config_path": null,
+    "homepage": "https://git.setpartnerstv.ru/backend/ecosystem",
+    "url": "git@git.setpartnerstv.ru:backend/ecosystem.git",
+    "ssh_url": "git@git.setpartnerstv.ru:backend/ecosystem.git",
+    "http_url": "https://git.setpartnerstv.ru/backend/ecosystem.git"
+  },
+  "commits": [
+    {
+      "id": "21cf4280e9c9ba2180e611d8337014f26d799556",
+      "message": "[IT-944]: add var to referral fix send mail\n",
+      "title": "[IT-944]: add var to referral fix send mail",
+      "timestamp": "2022-04-26T07:26:44+00:00",
+      "url": "https://git.setpartnerstv.ru/backend/ecosystem/-/commit/21cf4280e9c9ba2180e611d8337014f26d799556",
+      "author": {
+        "name": "Andrey Melnik",
+        "email": "a.melnik@ogon.ru"
+      },
+      "added": [],
+      "modified": [
+        "finance_operation/infra/services/payment_processing.go",
+        "finance_operation/infra/services/payment_processing_test.go",
+        "user/infra/listeners/outgoing_emails.go",
+        "user/infra/listeners/outgoing_emails_test.go",
+        "versions.yml"
+      ],
+      "removed": []
+    },
+    {
+      "id": "acdbf2a16564c407943b1b539a72fc4f3cb041ec",
+      "message": "[IT-1273] - delete user webhook now deletes clients.Potential\n",
+      "title": "[IT-1273] - delete user webhook now deletes clients.Potential",
+      "timestamp": "2022-04-26T07:59:01+00:00",
+      "url": "https://git.setpartnerstv.ru/backend/ecosystem/-/commit/acdbf2a16564c407943b1b539a72fc4f3cb041ec",
+      "author": {
+        "name": "Сохиб Екубов",
+        "email": "s.ekubov@pnhub.ru"
+      },
+      "added": [],
+      "modified": [
+        "partner/infra/listeners/delete_user_listener.go",
+        "partner/infra/repositories/partner_client.go",
+        "partner/infra/repositories/partner_client_test.go",
+        "pb/api.pb.go",
+        "user/infra/services/gpb_mobile_number_activate.go",
+        "versions.yml"
+      ],
+      "removed": []
+    },
+    {
+      "id": "355b9fab96cb443c9c54486754e4d82ededab305",
+      "message": "Merge branch 'feature/IT-1273' into 'develop'\n\n[IT-1273] - delete user webhook now deletes clients.Potential\n\nCloses IT-1273\n\nSee merge request backend/ecosystem!1795",
+      "title": "Merge branch 'feature/IT-1273' into 'develop'",
+      "timestamp": "2022-04-26T07:59:01+00:00",
+      "url": "https://git.setpartnerstv.ru/backend/ecosystem/-/commit/355b9fab96cb443c9c54486754e4d82ededab305",
+      "author": {
+        "name": "Сергей Земсков",
+        "email": "s.zemskov@pnhub.ru"
+      },
+      "added": [],
+      "modified": [
+        "partner/infra/listeners/delete_user_listener.go",
+        "partner/infra/repositories/partner_client.go",
+        "partner/infra/repositories/partner_client_test.go",
+        "pb/api.pb.go",
+        "user/infra/services/gpb_mobile_number_activate.go",
+        "versions.yml"
+      ],
+      "removed": []
+    },
+    {
+      "id": "78afeca78e42dccc003e8fed910135185793b5cb",
+      "message": "[IT-750] pb.PromotionButtonSettings changes\n",
+      "title": "[IT-750] pb.PromotionButtonSettings changes",
+      "timestamp": "2022-04-26T11:17:27+03:00",
+      "url": "https://git.setpartnerstv.ru/backend/ecosystem/-/commit/78afeca78e42dccc003e8fed910135185793b5cb",
+      "author": {
+        "name": "yamov",
+        "email": "g.yamov@dataintegral.ru"
+      },
+      "added": [],
+      "modified": [
+        "pb/api.pb.go",
+        "versions.yml"
+      ],
+      "removed": []
+    },
+    {
+      "id": "67621dcd71612e216df66b1521598f1e51a0045e",
+      "message": "Merge branch 'feature/IT-944' into 'develop'\n\n[IT-944]: add var to referral fix send mail\n\nCloses IT-944\n\nSee merge request backend/ecosystem!1791",
+      "title": "Merge branch 'feature/IT-944' into 'develop'",
+      "timestamp": "2022-04-26T08:44:51+00:00",
+      "url": "https://git.setpartnerstv.ru/backend/ecosystem/-/commit/67621dcd71612e216df66b1521598f1e51a0045e",
+      "author": {
+        "name": "Сергей Земсков",
+        "email": "s.zemskov@pnhub.ru"
+      },
+      "added": [],
+      "modified": [
+        "finance_operation/infra/services/payment_processing.go",
+        "finance_operation/infra/services/payment_processing_test.go",
+        "user/infra/listeners/outgoing_emails.go",
+        "user/infra/listeners/outgoing_emails_test.go",
+        "versions.yml"
+      ],
+      "removed": []
+    },
+    {
+      "id": "d4a3aad3ac7983edead88a712abc4fd3a28c0df4",
+      "message": "Merge branch 'feature/IT-750' into 'develop'\n\n[IT-750] pb.PromotionButtonSettings +type,view_mask\n\nCloses IT-750\n\nSee merge request backend/ecosystem!1797",
+      "title": "Merge branch 'feature/IT-750' into 'develop'",
+      "timestamp": "2022-04-26T08:54:50+00:00",
+      "url": "https://git.setpartnerstv.ru/backend/ecosystem/-/commit/d4a3aad3ac7983edead88a712abc4fd3a28c0df4",
+      "author": {
+        "name": "Сергей Земсков",
+        "email": "s.zemskov@pnhub.ru"
+      },
+      "added": [],
+      "modified": [
+        "pb/api.pb.go",
+        "versions.yml"
+      ],
+      "removed": []
+    },
+    {
+      "id": "4ea05b654d693aaf96b5076dcc8112027e200dbd",
+      "message": "added test report\n",
+      "title": "added test report",
+      "timestamp": "2022-04-26T12:46:17+03:00",
+      "url": "https://git.setpartnerstv.ru/backend/ecosystem/-/commit/4ea05b654d693aaf96b5076dcc8112027e200dbd",
+      "author": {
+        "name": "Alexey Solomonov",
+        "email": "byorty@mail.ru"
+      },
+      "added": [],
+      "modified": [
+        "user/infra/services/user_donation.go",
+        "versions.yml"
+      ],
+      "removed": []
+    },
+    {
+      "id": "cc10186aed449988e3abeb713e7ef896fba31a03",
+      "message": "[IT-750] pb.PromotionButtonSettings changes\n",
+      "title": "[IT-750] pb.PromotionButtonSettings changes",
+      "timestamp": "2022-04-26T14:40:00+03:00",
+      "url": "https://git.setpartnerstv.ru/backend/ecosystem/-/commit/cc10186aed449988e3abeb713e7ef896fba31a03",
+      "author": {
+        "name": "yamov",
+        "email": "g.yamov@dataintegral.ru"
+      },
+      "added": [],
+      "modified": [
+        "pb/api.pb.go",
+        "versions.yml"
+      ],
+      "removed": []
+    },
+    {
+      "id": "a1944d40ce42ce05f65ec7d009f569badf1f17d8",
+      "message": "Merge branch 'feature/IT-750' into 'develop'\n\n[IT-750] pb.PromotionButtonSettings changes\n\nCloses IT-750\n\nSee merge request backend/ecosystem!1802",
+      "title": "Merge branch 'feature/IT-750' into 'develop'",
+      "timestamp": "2022-04-26T11:57:27+00:00",
+      "url": "https://git.setpartnerstv.ru/backend/ecosystem/-/commit/a1944d40ce42ce05f65ec7d009f569badf1f17d8",
+      "author": {
+        "name": "Сергей Земсков",
+        "email": "s.zemskov@pnhub.ru"
+      },
+      "added": [],
+      "modified": [
+        "pb/api.pb.go",
+        "versions.yml"
+      ],
+      "removed": []
+    },
+    {
+      "id": "d994dbb39626e7e4b3af8ae3c1a89926e6cc343a",
+      "message": "[IT-1289] refactor benefit aplier\n",
+      "title": "[IT-1289] refactor benefit aplier",
+      "timestamp": "2022-04-26T12:37:15+00:00",
+      "url": "https://git.setpartnerstv.ru/backend/ecosystem/-/commit/d994dbb39626e7e4b3af8ae3c1a89926e6cc343a",
+      "author": {
+        "name": "Andrey Melnik",
+        "email": "a.melnik@ogon.ru"
+      },
+      "added": [],
+      "modified": [
+        "pb/api.pb.go",
+        "pb/api.pb.gw.go",
+        "user/application/server.go",
+        "user/domain/services/promo_code.go",
+        "user/infra/services/promo_code.go",
+        "user/infra/services/promo_code_test.go",
+        "user/infra/services/subscription_promotion_benefit_applier.go",
+        "user/infra/services/subscription_promotion_benefit_applier_test.go",
+        "versions.yml"
+      ],
+      "removed": []
+    }
+  ],
+  "total_commits_count": 10,
+  "push_options": {},
+  "repository": {
+    "name": "ecosystem",
+    "url": "git@git.setpartnerstv.ru:backend/ecosystem.git",
+    "description": "",
+    "homepage": "https://git.setpartnerstv.ru/backend/ecosystem",
+    "git_http_url": "https://git.setpartnerstv.ru/backend/ecosystem.git",
+    "git_ssh_url": "git@git.setpartnerstv.ru:backend/ecosystem.git",
+    "visibility_level": 0
+  }
+}
+
+###
+POST http://localhost:8900/gitlab
+Content-Type: application/json
+
+{
+  "object_kind": "merge_request",
+  "event_type": "merge_request",
+  "user": {
+    "name": "Артем Зеленин",
+    "username": "a.zelenin",
+    "avatar_url": "https://git.setpartnerstv.ru/uploads/-/system/user/avatar/51/avatar.png",
+    "email": "a.zelenin@dataintegral.ru"
+  },
+  "project": {
+    "id": 2,
+    "name": "ecosystem",
+    "description": "",
+    "web_url": "https://git.setpartnerstv.ru/backend/ecosystem",
+    "avatar_url": null,
+    "git_ssh_url": "git@git.setpartnerstv.ru:backend/ecosystem.git",
+    "git_http_url": "https://git.setpartnerstv.ru/backend/ecosystem.git",
+    "namespace": "backend",
+    "visibility_level": 0,
+    "path_with_namespace": "backend/ecosystem",
+    "default_branch": "develop",
+    "ci_config_path": null,
+    "homepage": "https://git.setpartnerstv.ru/backend/ecosystem",
+    "url": "git@git.setpartnerstv.ru:backend/ecosystem.git",
+    "ssh_url": "git@git.setpartnerstv.ru:backend/ecosystem.git",
+    "http_url": "https://git.setpartnerstv.ru/backend/ecosystem.git"
+  },
+  "object_attributes": {
+    "assignee_id": null,
+    "author_id": 51,
+    "created_at": "2022-04-26 11:29:41 UTC",
+    "description": "",
+    "head_pipeline_id": null,
+    "id": 4557,
+    "iid": 1801,
+    "last_edited_at": null,
+    "last_edited_by_id": null,
+    "merge_commit_sha": null,
+    "merge_error": null,
+    "merge_params": {
+      "force_remove_source_branch": "1"
+    },
+    "merge_status": "unchecked",
+    "merge_user_id": null,
+    "merge_when_pipeline_succeeds": false,
+    "milestone_id": null,
+    "source_branch": "erp-methods",
+    "source_project_id": 2,
+    "state_id": 1,
+    "target_branch": "add_pprof",
+    "target_project_id": 2,
+    "time_estimate": 0,
+    "title": "TEST MR FOR HOOK",
+    "updated_at": "2022-04-26 11:29:41 UTC",
+    "updated_by_id": null,
+    "url": "https://git.setpartnerstv.ru/backend/ecosystem/-/merge_requests/1801",
+    "source": {
+      "id": 2,
+      "name": "ecosystem",
+      "description": "",
+      "web_url": "https://git.setpartnerstv.ru/backend/ecosystem",
+      "avatar_url": null,
+      "git_ssh_url": "git@git.setpartnerstv.ru:backend/ecosystem.git",
+      "git_http_url": "https://git.setpartnerstv.ru/backend/ecosystem.git",
+      "namespace": "backend",
+      "visibility_level": 0,
+      "path_with_namespace": "backend/ecosystem",
+      "default_branch": "develop",
+      "ci_config_path": null,
+      "homepage": "https://git.setpartnerstv.ru/backend/ecosystem",
+      "url": "git@git.setpartnerstv.ru:backend/ecosystem.git",
+      "ssh_url": "git@git.setpartnerstv.ru:backend/ecosystem.git",
+      "http_url": "https://git.setpartnerstv.ru/backend/ecosystem.git"
+    },
+    "target": {
+      "id": 2,
+      "name": "ecosystem",
+      "description": "",
+      "web_url": "https://git.setpartnerstv.ru/backend/ecosystem",
+      "avatar_url": null,
+      "git_ssh_url": "git@git.setpartnerstv.ru:backend/ecosystem.git",
+      "git_http_url": "https://git.setpartnerstv.ru/backend/ecosystem.git",
+      "namespace": "backend",
+      "visibility_level": 0,
+      "path_with_namespace": "backend/ecosystem",
+      "default_branch": "develop",
+      "ci_config_path": null,
+      "homepage": "https://git.setpartnerstv.ru/backend/ecosystem",
+      "url": "git@git.setpartnerstv.ru:backend/ecosystem.git",
+      "ssh_url": "git@git.setpartnerstv.ru:backend/ecosystem.git",
+      "http_url": "https://git.setpartnerstv.ru/backend/ecosystem.git"
+    },
+    "last_commit": {
+      "id": "d96afa7652fab75e63498f5f8977372b45e2302c",
+      "message": "erp methods\n",
+      "title": "erp methods",
+      "timestamp": "2021-11-08T19:56:57+03:00",
+      "url": "https://git.setpartnerstv.ru/backend/ecosystem/-/commit/d96afa7652fab75e63498f5f8977372b45e2302c",
+      "author": {
+        "name": "Tolkacheva.Elena",
+        "email": "Tolkacheva.Elena@wildberries.ru"
+      }
+    },
+    "work_in_progress": false,
+    "total_time_spent": 0,
+    "human_total_time_spent": null,
+    "human_time_estimate": null,
+    "assignee_ids": [],
+    "state": "opened",
+    "action": "open"
+  },
+  "labels": [],
+  "changes": {
+    "author_id": {
+      "previous": null,
+      "current": 51
+    },
+    "created_at": {
+      "previous": null,
+      "current": "2022-04-26 11:29:41 UTC"
+    },
+    "description": {
+      "previous": null,
+      "current": ""
+    },
+    "id": {
+      "previous": null,
+      "current": 4557
+    },
+    "iid": {
+      "previous": null,
+      "current": 1801
+    },
+    "merge_params": {
+      "previous": {},
+      "current": {
+        "force_remove_source_branch": "1"
+      }
+    },
+    "source_branch": {
+      "previous": null,
+      "current": "erp-methods"
+    },
+    "source_project_id": {
+      "previous": null,
+      "current": 2
+    },
+    "target_branch": {
+      "previous": null,
+      "current": "add_pprof"
+    },
+    "target_project_id": {
+      "previous": null,
+      "current": 2
+    },
+    "title": {
+      "previous": null,
+      "current": "TEST MR FOR HOOK"
+    },
+    "updated_at": {
+      "previous": null,
+      "current": "2022-04-26 11:29:41 UTC"
+    },
+    "total_time_spent": {
+      "previous": null,
+      "current": 0
+    }
+  },
+  "repository": {
+    "name": "ecosystem",
+    "url": "git@git.setpartnerstv.ru:backend/ecosystem.git",
+    "description": "",
+    "homepage": "https://git.setpartnerstv.ru/backend/ecosystem"
+  }
+}

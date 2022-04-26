@@ -90,6 +90,9 @@ func (d *Dispatcher) Proxy(source string, body []byte, params interface{}, srcCf
 		"mention": func(userID string) string {
 			return fmt.Sprintf("<@%s>", userID)
 		},
+		"trim_prefix": func(str, prefix string) string {
+			return strings.TrimPrefix(str, prefix)
+		},
 	})
 	// TODO optimize
 	tp, err := tp.Parse(srcCfg.Template)
@@ -112,7 +115,7 @@ func (d *Dispatcher) Proxy(source string, body []byte, params interface{}, srcCf
 		if sub.OnlyPersonal {
 			ok, err := d.isPersonal(scope)
 			if err != nil {
-				d.sendMessage(fmt.Sprintf("expression exec failure err:%v", err), sub)
+				d.sendMessage(fmt.Sprintf("expression exec failure err:%v", err), sub, srcCfg)
 				continue
 			}
 			if !ok {
@@ -122,7 +125,7 @@ func (d *Dispatcher) Proxy(source string, body []byte, params interface{}, srcCf
 
 		ok, err := d.filter(sub, scope)
 		if err != nil {
-			d.sendMessage(fmt.Sprintf("expression exec failure err:%v", err), sub)
+			d.sendMessage(fmt.Sprintf("expression exec failure err:%v", err), sub, srcCfg)
 			continue
 		}
 		if ok {
@@ -131,18 +134,24 @@ func (d *Dispatcher) Proxy(source string, body []byte, params interface{}, srcCf
 			if err != nil {
 				return err
 			}
-			d.sendMessage(msgBody.String(), sub)
+			d.sendMessage(msgBody.String(), sub, srcCfg)
 		}
 	}
 	return nil
 }
 
-func (d *Dispatcher) sendMessage(msg string, sub *Subscription) {
+func (d *Dispatcher) sendMessage(msgText string, sub *Subscription, srcCfg *SourceConfig) {
+	var msgType MsgType = MsgTypeCommon
 	if sub.Direct {
-		d.bot.SendMessageToDirect(msg, sub.UserID)
-	} else {
-		d.bot.SendMessage(msg, sub.ChannelID)
+		msgType = MsgTypeDirect
 	}
+	d.bot.Send(&Msg{
+		ChannelID: sub.ChannelID,
+		Body:      msgText,
+		Type:      msgType,
+		UserID:    sub.UserID,
+		AsEmbed:   srcCfg.SendAsEmbed,
+	})
 }
 
 func (d *Dispatcher) isPersonal(scope *Scope) (bool, error) {

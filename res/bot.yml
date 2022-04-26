@@ -8,6 +8,7 @@ sources:
   jira:
     request_type: "post-json-obj"
     action_type: "proxy"
+    send_as_embed: true
     find_persona_expr: MatchTokens(JsonPath("issue.fields.assignee.displayName"),Sub.Username)
     template: |
       {{ mention .Sub.UserID }}
@@ -17,7 +18,26 @@ sources:
       Asignee: {{ .R.issue.fields.assignee.displayName }}
       Status: {{ .R.issue.fields.status.name }}
       Summory: {{ .R.issue.fields.summary }}
-      Description: {{.R.issue.fields.description}}
+      Description: 
+      {{.R.issue.fields.description}}
+  gitlab:
+    request_type: "post-json-obj"
+    action_type: "proxy"
+    send_as_embed: true
+    find_persona_expr: MatchTokens(JsonPath("user.name"),Sub.Username) || MatchTokens(JsonPath("user_name"),Sub.Username)
+    template: |
+      {{ mention .Sub.UserID }}
+      EventType: {{ .R.object_kind }} {{ if eq .R.object_kind "merge_request" }} 
+      Title: {{ .R.object_attributes.title }}
+      {{ .R.object_attributes.source_branch }} -> {{ .R.object_attributes.target_branch }}
+      URL: {{ .R.object_attributes.url }}
+      State: {{ .R.object_attributes.state }} {{end}} {{ if eq .R.object_kind "push" }} 
+      Repo:{{.R.repository.git_http_url}}
+      Branch: https://git.setpartnerstv.ru/backend/ecosystem/-/tree/{{ trim_prefix .R.ref "refs/heads" }}
+      Commits: {{ range $i, $c := .R.commits }}
+      [{{ $c.title }}]({{ $c.url }}){{end}}{{end}}
+   
+
 
       
 

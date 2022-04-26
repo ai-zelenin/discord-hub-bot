@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"github.com/bwmarrin/discordgo"
 	"log"
+	"time"
 )
 
 type MsgType string
@@ -19,6 +20,7 @@ type Msg struct {
 	ChannelID string
 	UserID    string
 	Type      MsgType
+	AsEmbed   bool
 }
 
 type Interaction struct {
@@ -143,8 +145,11 @@ func (b *Bot) handleCreateMessage(s *discordgo.Session, m *discordgo.MessageCrea
 	if m.Author.ID == s.State.User.ID {
 		return
 	}
-	if m.Content == "ping" {
-		b.SendMessage(fmt.Sprintf("pong <@%s>", m.Author.ID), m.ChannelID)
+	if m.Content == "ping bot" {
+		b.Send(&Msg{
+			ChannelID: m.ChannelID,
+			Body:      fmt.Sprintf("<@%s> i`m ok", m.Author.ID),
+		})
 	}
 }
 
@@ -155,22 +160,8 @@ func (b *Bot) InteractionRespond(interaction *discordgo.Interaction, resp *disco
 	}
 }
 
-func (b *Bot) SendMessage(body string, channelIDs ...string) {
-	for _, channelID := range channelIDs {
-		b.msgChan <- &Msg{
-			ChannelID: channelID,
-			Body:      body,
-			Type:      MsgTypeCommon,
-		}
-	}
-}
-
-func (b *Bot) SendMessageToDirect(body string, userID string) {
-	b.msgChan <- &Msg{
-		UserID: userID,
-		Body:   body,
-		Type:   MsgTypeDirect,
-	}
+func (b *Bot) Send(msg *Msg) {
+	b.msgChan <- msg
 }
 
 func (b *Bot) handleOutgoingMessages(s *discordgo.Session, msg *Msg) error {
@@ -181,10 +172,24 @@ func (b *Bot) handleOutgoingMessages(s *discordgo.Session, msg *Msg) error {
 		}
 		msg.ChannelID = channel.ID
 	}
-	b.logger.Printf("send (%s) to %v", msg.Body, msg.ChannelID)
-	_, err := s.ChannelMessageSend(msg.ChannelID, msg.Body)
-	if err != nil {
-		return err
+	b.logger.Printf("send ---\n %s \n--- to %v", msg.Body, msg.ChannelID)
+	if msg.AsEmbed {
+		_, err := s.ChannelMessageSendEmbed(msg.ChannelID, &discordgo.MessageEmbed{
+			Type:        discordgo.EmbedTypeRich,
+			Description: msg.Body,
+			Timestamp:   time.Now().Format(time.RFC3339Nano),
+			Footer: &discordgo.MessageEmbedFooter{
+				Text: "Bot notification",
+			},
+		})
+		if err != nil {
+			return err
+		}
+	} else {
+		_, err := s.ChannelMessageSend(msg.ChannelID, msg.Body)
+		if err != nil {
+			return err
+		}
 	}
 	return nil
 }
