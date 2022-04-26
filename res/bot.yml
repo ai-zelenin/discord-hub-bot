@@ -1,0 +1,24 @@
+host: 0.0.0.0
+port: 8900
+token: "${BOT_TOKEN}"
+app_id: "${BOT_APP_ID}"
+guild_id:
+db_uri: "db.json"
+sources:
+  jira:
+    request_type: "post-json-obj"
+    action_type: "proxy"
+    find_persona_expr: MatchTokens(JsonPath("issue.fields.assignee.displayName"),Sub.Username)
+    template: |
+      {{ mention .Sub.UserID }}
+      Event: {{ .R.webhookEvent }}
+      IssueType: {{ .R.issue.fields.issuetype.name }}
+      IssueLink: https://setpartnerstv.atlassian.net/browse/{{ .R.issue.key }}
+      Asignee: {{ .R.issue.fields.assignee.displayName }}
+      Status: {{ .R.issue.fields.status.name }}
+      Summory: {{ .R.issue.fields.summary }}
+      Description: {{.R.issue.fields.description}}
+
+      
+
+
